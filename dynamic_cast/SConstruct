@@ -1,0 +1,8 @@
+env = Environment()
+env.Append(CXXFLAGS = '-std=c++11')
+
+src_file = Split('dynamic_cast.cpp')
+lib_name = 'dynamic_cast'
+env.Library(lib_name, src_file)
+
+Program('dynamic_cast.out', LIBS=['dynamic_cast'], LIBPATH='.')
